@@ -4,16 +4,14 @@ package pl.weatherapp.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import pl.weatherapp.model.Current;
 import pl.weatherapp.service.WeatherService;
 
 
 @Controller
 public class WeatherController {
+
     private WeatherService weatherService;
 
     @Autowired
@@ -21,19 +19,18 @@ public class WeatherController {
         this.weatherService = weatherService;
     }
 
-    @GetMapping("/weather")
+    @GetMapping
     public Current getDataAboutWeather(@RequestParam String city) {
         return weatherService.dataAboutWeather(city);
     }
 
-
-    @GetMapping("/view")
-    public String getWeather(Model model, String city) {
-        model.addAttribute("weatherData", getDataAboutWeather(city));
+    @GetMapping("/")
+    public String viewData(Model model, String city) {
+        model.addAttribute("request", getDataAboutWeather(city));
         return "view";
     }
 
 
-
-
 }
+
+

@@ -1,19 +1,15 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>k</title>
 </head>
 <body>
+<td th:text="${request.getCloud()}"></td>
+<td th:text="${request.getTempC()}"></td>
 
-<form th:action="@{/weatherView.html}">
-    <p>Location : <input type="text"></p>
-    <p><input type="submit" value="Click me"></p>
-</form>
-
-<p th:text="${weatherData.getTempC().toString()}"></p>
-<p th:text="${weatherData.getCloud().toString()}"></p>
-
-
+</table>
 </body>
 </html>
