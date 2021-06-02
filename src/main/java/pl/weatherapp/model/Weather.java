@@ -18,6 +18,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 })
 @Generated("jsonschema2pojo")
 public class Weather {
+    public Weather() {
+    }
 
     @JsonProperty("location")
     private Location location;

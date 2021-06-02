@@ -7,9 +7,33 @@
     <title>k</title>
 </head>
 <body>
-<td th:text="${request.getCloud()}"></td>
-<td th:text="${request.getTempC()}"></td>
 
-</table>
+
+<br><br>
+<form style="width: 600px; margin: auto;" th:action="@{/add}" th:object="${request}" method="post">
+    <div class="form-group">
+        <label for="exampleInput">City</label>
+        <input class="form-control" id="exampleInput" placeholder="Enter City" th:field="*{name}">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+<tr th:text="${request.getName()}"></tr>
+<br>
+<tr th:text="${request.getTempC()}"></tr>
+<br>
+<tr th:text="${request.getCloud()}"></tr>
+<br>
+<tr th:text="${request.getIsDay()}"></tr>
+<tr th:text="${request.getWindDegree()}"></tr>
+<tr th:text="${request.getAdditionalProperties()}"></tr>
+<tr th:text="${request.getFeelslikeC()}"></tr>
+<tr th:text="${request.getGustKph()}"></tr>
+<tr th:text="${request.getPressureIn()}"></tr>
+<tr th:text="${request.getUv()}"></tr>
+
+
+
 </body>
 </html>

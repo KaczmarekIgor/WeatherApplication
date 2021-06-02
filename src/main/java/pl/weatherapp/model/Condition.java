@@ -20,6 +20,9 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 @Generated("jsonschema2pojo")
 public class Condition {
 
+    public Condition() {
+    }
+
     @JsonProperty("text")
     private String text;
     @JsonProperty("icon")

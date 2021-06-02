@@ -24,6 +24,8 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 })
 @Generated("jsonschema2pojo")
 public class Location {
+    public Location() {
+    }
 
     @JsonProperty("name")
     private String name;

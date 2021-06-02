@@ -14,23 +14,28 @@ public class WeatherController {
 
     private WeatherService weatherService;
 
+
     @Autowired
     public WeatherController(WeatherService weatherService) {
         this.weatherService = weatherService;
     }
 
-    @GetMapping
-    public Current getDataAboutWeather(@RequestParam String city) {
-        return weatherService.dataAboutWeather(city);
-    }
-
     @GetMapping("/")
     public String viewData(Model model, String city) {
-        model.addAttribute("request", getDataAboutWeather(city));
+        model.addAttribute("request", weatherService.dataAboutWeather(city));
+        System.out.println(weatherService.dataAboutWeather(city));
         return "view";
+    }
+
+    //@ModelAttribute przekazywanie z widoku do pojo
+    @PostMapping("/add")
+    public String setCity(@ModelAttribute Current current) {
+        return "redirect:/" ;
     }
 
 
 }
+
+
 
 
