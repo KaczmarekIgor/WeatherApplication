@@ -21,21 +21,16 @@ public class WeatherController {
         this.weatherService = weatherService;
     }
 
-    @GetMapping("/")
-    public String viewData(Model model, String city) {
-        model.addAttribute("request", weatherService.dataAboutWeather(city));
+    @GetMapping
+    public String getWeatherByCity(Model model) {
+        model.addAttribute("request", weatherService.dataAboutWeather("Warsaw"));
         return "view";
     }
 
-    //@ModelAttribute przekazywanie z widoku do pojo
-    @PostMapping("/add")
-    public String setCity(@ModelAttribute String city) {
-        return "redirect:/" ;
+    @PostMapping
+    public String setCity(Model model, String city) {
+            model.addAttribute("request", weatherService.dataAboutWeather(city));
+            return "view";
+
+        }
     }
-
-
-}
-
-
-
-
