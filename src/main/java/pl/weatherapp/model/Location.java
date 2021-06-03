@@ -136,4 +136,18 @@ public class Location {
         this.additionalProperties.put(name, value);
     }
 
+    @Override
+    public String toString() {
+        return "Location{" +
+                "name='" + name + '\'' +
+                ", region='" + region + '\'' +
+                ", country='" + country + '\'' +
+                ", lat=" + lat +
+                ", lon=" + lon +
+                ", tzId='" + tzId + '\'' +
+                ", localtimeEpoch=" + localtimeEpoch +
+                ", localtime='" + localtime + '\'' +
+                ", additionalProperties=" + additionalProperties +
+                '}';
+    }
 }
