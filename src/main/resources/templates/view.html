@@ -55,6 +55,7 @@
         position: center;
         text-align: center;
     }
+
     form {
         position: center;
         text-align: center;
@@ -76,10 +77,13 @@
 </form>
 
 <br>
-<tr th:text="${request.getTempC()}"></tr>
+Temperature:
+<tr th:text="${request.getTempC} "></tr>
 <br>
-<tr th:text="${request.getCloud()}"></tr>
-<br>
+<td>
+    <span th:if="${request.getTempC() >= 20}"> <img src="good_weather.png">  </span>
+    <span th:if="${request.getTempC() < 20}"> <img src="bad_weather.png"></span>
+</td>
 
 
 </body>

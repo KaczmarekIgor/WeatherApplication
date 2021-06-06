@@ -5,8 +5,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import pl.weatherapp.model.Current;
-import pl.weatherapp.model.Location;
 import pl.weatherapp.service.WeatherService;
 
 
@@ -24,7 +22,7 @@ public class WeatherController {
     @GetMapping
     public String getWeatherByCity(Model model) {
         model.addAttribute("request", weatherService.dataAboutWeather("Warsaw"));
-        return "view";
+        return "view" ;
     }
 
     @PostMapping
